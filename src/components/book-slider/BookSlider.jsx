@@ -1,10 +1,24 @@
 import React, { useState } from 'react'
+import Modal from '../modal/Modal';
+// import Modal from '../modal/Modal';
 import "./book-slider.css"
 import Rating from './rating';
 
-
 const BookSlider = ({data}) => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const [bookData, setBookData] = useState(null);
+
+
+  // Handle Model
+  const handleModel = (book) => {
+    setOpenModal(true);
+    setBookData(book);
+  }
+
+  // Handle Click 
+
+
 
   const handleClick = direction => {
     if (direction === "left") {
@@ -25,13 +39,15 @@ const BookSlider = ({data}) => {
               <Rating  rating={item.rating} reviews={item.reviews}/>
               <div className="book-slide-item-price">${item.price}</div>
               <div className="book-slider-icons-wrapper">
-                <i className="bi bi-eye-fill"></i>
+                <i onClick={() => handleModel(item)} className="bi bi-eye-fill"></i>
                 <i className="bi bi-eye-cart-plus"></i>
               </div>
             </div>
             )}
         </div>
       {slideIndex < data.length - 4 && <i onClick={() => handleClick("right")} className="bi bi-chevron-right book-slider-arrow-right"></i>}
+      {/* if condition: اذا الأوبن موديل ترو إعرضلي كومبوننت الموديل  */} 
+      {openModal && <Modal bookData={bookData} setOpenModal={setOpenModal}/>} 
     </div>
   )
 }

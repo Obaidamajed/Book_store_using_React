@@ -1,20 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HeaderMiddle = () => {
   return (
     <div className="header-middle">
-      <div className="header-middle-logo">
+      <Link to="/" className="header-middle-logo">
         <b>Book</b>
         <i className="bi bi-book"></i>
         <b>Store</b>
-      </div>
+      </Link>
       <div className="header-middle-search-box">
         <input className='header-middle-search-input' type="search" placeholder='Search in book store ...'></input>
         <i className="bi bi-search"></i>
       </div>
-      <div className="header-middle-cart-wrapper">
+      <Link to="/cart" className="header-middle-cart-wrapper">
         <i className="bi bi-cart2"></i>
-      </div>
+      </Link>
     </div>
   )
 }

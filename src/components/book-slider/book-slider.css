@@ -105,26 +105,7 @@
   font-weight: 500;
 }
 
-/* Rating */
-.rating {
-  color: orange;
-}
 
-.rating i {
-  font-size: 21px;
-  margin: 0 2px;
-}
-
-.rating span:first-of-type {
-  font-weight: 500;
-  margin: 0 12px;
-}
-
-.rating span:last-of-type {
-  color: gray;
-  font-size: 15px;
-  font-weight: 600;
-}
 
 
 
