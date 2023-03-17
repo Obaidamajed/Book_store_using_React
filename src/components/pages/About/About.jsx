@@ -1,7 +1,14 @@
 import React from 'react'
+import "./about.css"
 
 export const About = () => {
   return (
-    <h1>About</h1>
+    <section className="about">
+      <h1>About Us</h1>
+      <p>We are an online book store</p>
+      <p>
+        <strong>Version: 1.0.0</strong>
+      </p>
+    </section>
   )
 }

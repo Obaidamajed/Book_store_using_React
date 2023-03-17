@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Rating from "../book-slider/rating";
 import "./modal.css";
 import {useState,useContext} from "react";
-import BookStoreContext from "../../context/bookStorContext";
+import CartContext from "../../context/CartContext";
 
 const Modal = ({ bookData, setOpenModal }) => {
-  const { addToCart } = useContext(BookStoreContext);
+  const { addToCart } = useContext(CartContext);
   const [qty, setQty] = useState(1);
 
   const {
@@ -52,8 +52,9 @@ const Modal = ({ bookData, setOpenModal }) => {
               max="100"
               value={qty}
               onChange={e => setQty(e.target.value)}
+              
             />
-            <button onClick={() => addToCart(bookData, qty)} className="modal-add-to-cart-btn">
+            <button onClick={() => addToCart({...bookData, quantity: qty})} className="modal-add-to-cart-btn">
               <i className="bi bi-cart-plus"></i>
               Add To Cart
             </button>

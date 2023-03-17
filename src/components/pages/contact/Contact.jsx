@@ -1,8 +1,48 @@
-import React from 'react'
+import "./contact.css";
 
 const Contact = () => {
   return (
-    <h1>Contact</h1>
-  )
-}
-export default Contact
+    <section className="contact">
+      <div className="contact-wrapper">
+        <div className="contact-item">
+          <div className="contact-item-icon">
+            <i className="bi bi-house-fill"></i>
+            Address
+          </div>
+          <p className="contact-item-text">Jordan-Aqaba-Alhusein St</p>
+        </div>
+        <div className="contact-item">
+          <div className="contact-item-icon">
+            <i className="bi bi-telephone-fill"></i>
+            Phone
+          </div>
+          <p className="contact-item-text">+962781841055</p>
+        </div>
+        <div className="contact-item">
+          <div className="contact-item-icon">
+            <i className="bi bi-envelope-fill"></i>
+            Email
+          </div>
+          <p className="contact-item-text">obaida@gmail.com</p>
+        </div>
+      </div>
+      <form onSubmit={e => e.preventDefault()} className="contact-form">
+      {/* {e => e.preventDefault()} حتى أمنع الريلود  */}
+        <h2 className="contact-form-title">Contact Us Form</h2>
+        <div className="contact-input-wrapper">
+          <input type="text" placeholder="Name *" />
+          <input type="text" placeholder="Subject *" />
+          <input type="text" placeholder="Email *" />
+        </div>
+        <textarea
+          placeholder="Your Message *"
+          className="contact-textarea"
+          rows="5"
+        ></textarea>
+        <button className="contact-btn">Send</button>
+      </form>
+    </section>
+  );
+};
+
+export default Contact;
